@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+
+class EvenNumber {
+private:
+    int value;
+    
+public:
+    EvenNumber(){
+        const int zero = 0;
+    }
+    EvenNumber(int newValue){
+        value = newValue;
+    }
+    int GetValue(){
+        return value;
+    }
+    int GetNext(){
+        int next = value + 2;
+        return next;
+    }
+    int GetPrevious(){
+        int previous = (value - 2);
+        return previous;
+    }
+    
+    
+    
+};
+
+int main(){
+    EvenNumber value (16);
+    cout << "The current value is: " << value.GetValue() << endl;
+    cout << "The Previous value is: " << value.GetPrevious() << endl;
+    cout << "The Next value is: " << value.GetNext() << endl;
+    
+}
