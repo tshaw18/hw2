@@ -1,0 +1,56 @@
+// Trevor Shaw
+// Pete Tucker
+// CS2
+// May 26, 2015
+// The Fan Class 9.2
+
+#include <iostream>
+using namespace std;
+
+class Fan {
+private:
+    double Radius;
+    
+public:
+    int Speed;
+    bool On = true;
+    
+    Fan (){
+        Speed = 1; On = false; Radius = 5;
+    }
+    
+    void SetRadius(int NewRadius){
+        Radius = NewRadius;
+    }
+    int GetRadius(){
+        return Radius;
+    }
+};
+
+int main(){
+    Fan f1, f2;
+    
+    f1.SetRadius(10);
+    f1.Speed = 3;
+    f1.On = true;
+    f2.SetRadius(5);
+    f2.Speed = 2;
+    f2.On = false;
+    
+    
+    
+    cout << "Fan 1 speed is: " << f1.Speed << endl;
+    cout << "Fan 1 radius is: " << f1.GetRadius() << endl;
+    cout << "Fan 1 is: ";
+    if (f1.On == true)
+        cout << "On\n\n";
+    else cout << "Off\n\n";
+    
+    cout << "Fan 2 speed is: " << f2.Speed << endl;
+    cout << "Fan 2 radius is: " << f2.GetRadius() << endl;
+    cout << "Fan 2 is: ";
+    if (f2.On == true)
+        cout << "On\n\n";
+    else cout << "Off\n\n";
+    
+}
