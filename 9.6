@@ -1,0 +1,63 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+
+class QuadraticFormula {
+private:
+    double a, b, c;
+    
+public:
+    QuadraticFormula(double a, double b, double c)
+    :a(a), b(b), c(c){}
+   
+    int GetA(){
+        return a;
+    }
+    int GetB(){
+        return b;
+    }
+    int GetC(){
+        return c;
+    }
+    int GetDiscriminant(){
+        return (b * b - 4 * a * c);
+    }
+    double GetRoot1(){
+        if (GetDiscriminant() < 0){
+            return 0;
+        }
+        else
+            return (-b + sqrt(GetDiscriminant())) / (2 * a);
+    }
+    double GetRoot2(){
+        if (GetDiscriminant() < 0){
+            return 0;
+        }
+        else
+            return (-b - sqrt(GetDiscriminant())) / (2 * a);
+    }
+    
+};
+
+int main(){
+    cout << "Enter a value for a, b, and c\n\n";
+    double a, b, c, discriminant;
+    
+    cin >> a;
+    cin >> b;
+    cin >> c;
+    
+    QuadraticFormula Formula(a, b, c);
+    discriminant = Formula.GetDiscriminant();
+    
+    if (discriminant < 0)
+        cout << "The equation has no real roots.";
+    else if (discriminant == 0){
+        cout << "The root is: " << Formula.GetRoot1();
+    }
+    else {
+        cout << "The roots are:" << endl << Formula.GetRoot1() << endl << Formula.GetRoot2();
+    }
+    
+}
