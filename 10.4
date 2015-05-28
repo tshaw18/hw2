@@ -1,0 +1,47 @@
+// Trevor Shaw
+// Pete Tucker
+// CS2
+// May 27, 2015
+// 10.4
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+string sort(string &s)
+{
+    for (int i = s.length() - 1; i > 0; i--)
+    {
+        s[i] = tolower(s[i]);
+        s[0] = tolower(s[0]);
+        char max = s[0];
+        int NumOfLetters = 0;
+        
+        for(int j = 1; j < i; j++){
+            s[j] = tolower(s[j]);
+            if(max < s[j]){
+                max = s[j];
+                NumOfLetters = j;
+            }
+        }
+            if (NumOfLetters != i){
+                s[NumOfLetters] = s[i];
+                s[i] = max;
+                
+        }
+    }
+    
+    
+    return s;
+}
+
+
+int main(){
+    string word;
+    cout << "Enter a word to alphabetize: ";
+    cin >> word;
+    
+    
+    cout << endl << sort(word) << endl;
+}
+
